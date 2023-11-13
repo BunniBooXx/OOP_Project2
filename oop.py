@@ -49,29 +49,31 @@
 
 class ROI():
     def __init__(self, income, expenses):
-        self.incomes = income
+        self.income = income
         self.expenses = expenses
 
     def total_income(self):
-        return self.incomes
+        return self.income
 
     def total_expenses(self):
         return self.expenses
 
-    def total_roi(self):
-        question = float(input("What is your total Monthly Income? "))
-        income = self.total_income()
+    def total_roi(self, user_income, user_expenses):
+        return user_income - user_expenses
 
-        question2 = float(input("What is your total monthly expenses and investment? "))
-        expenses = self.total_expenses()
+# Get user input for income and expenses
+user_income = float(input("Enter your total Monthly Income: "))
+user_expenses = float(input("Enter your total monthly expenses and investment: "))
 
-        return income - expenses
-
-
+# Create an instance of the ROI class
 calc = ROI(2000, 1000)
-result = calc.total_roi()
 
+# Calculate and print the ROI
+result = calc.total_roi(user_income, user_expenses)
 print(f"Your total ROI is: {result}")
+
+
+
 
 
 
