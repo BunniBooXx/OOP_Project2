@@ -47,31 +47,32 @@
 # self.etc is a class 
 # 
 
-class roi(): 
-    incomes = {}
-    expense = {}
-    def __init__(self,income,expenses):
-        self.income = income
+class ROI():
+    def __init__(self, income, expenses):
+        self.incomes = income
         self.expenses = expenses
-        
+
     def total_income(self):
-        self.incomes.keys()
-        
-    def total_expenses(self): 
-       self.expense.keys()
-       
-    def total_total(self): 
-         question = input("What is your total Monthly Income? ")
-         self.total_income()
-         question2 = input ("What is your total monthly expenses and investment? ")
-         self.total_expenses()
-         return self.total_income() - self.total_expenses() 
+        return self.incomes
 
-             
-  
-calc = roi(2000,1000)
+    def total_expenses(self):
+        return self.expenses
 
-calc.total_total()
+    def total_roi(self):
+        question = float(input("What is your total Monthly Income? "))
+        income = self.total_income()
+
+        question2 = float(input("What is your total monthly expenses and investment? "))
+        expenses = self.total_expenses()
+
+        return income - expenses
+
+
+calc = ROI(2000, 1000)
+result = calc.total_roi()
+
+print(f"Your total ROI is: {result}")
+
 
 
 
